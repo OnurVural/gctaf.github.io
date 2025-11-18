@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data.">
+  <meta name="keywords" content="time series representation learning, contrastive representation learning, multivariate time series analysis, solar flare prediction, deep learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><a href="https://onurvural.github.io">Onur Vural</a>,</span>
+            <span class="author-block">Shah Muhammad Hamdi,</span>
+            <span class="author-block">Soukaina Filali Boubrahimi</span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Utah State University</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/pdf/2410.00312"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.00312"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/OnurVural/contrex"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Major solar flares are abrupt surges in the Sun's magnetic flux, presenting significant risks to technological infrastructure. 
+            In view of this, effectively predicting major flares from solar active region magnetic field data through machine learning methods becomes highly important in space weather research. 
+            Magnetic field data can be represented in multivariate time series modality where the data displays an extreme class imbalance due to the rarity of major flare events. 
+            In time series classification-based flare prediction, the use of contrastive representation learning methods has been relatively limited. 
+          </p>
+          <p>
+            In this paper, we introduce CONTREX, a novel contrastive representation learning approach for multivariate time series data, 
+            addressing challenges of temporal dependencies and extreme class imbalance. 
+            Our method involves extracting dynamic features from the multivariate time series instances, 
+            deriving two extremes from positive and negative class feature vectors that provide maximum separation capability, 
+            and training a sequence representation embedding module with the original multivariate time series data guided by our novel contrastive reconstruction loss 
+            to generate embeddings aligned with the extreme points. These embeddings capture essential time series characteristics and enhance discriminative power. 
+            Our approach shows promising solar flare prediction results on the Space Weather Analytics for Solar Flares (SWAN-SF) multivariate time series benchmark dataset 
+            against baseline methods.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+    <!-- Methodology. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Methodology</h2>
+
+        <!-- Extracting. -->
+        <h3 class="title is-4">Extracting Dynamical Time Series Features</h3>
+        <div class="content has-text-justified">
+          <p>
+            We extract catch22 features for each univariate time series in MVTS instances to have a low dimensional summary to represent the diverse and interpretable characteristics. 
+            Accordingly, for each MVTS data instance, we extract a fixed-dimensional multi-catch22 vector of size 22N.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+            <img src="./static/images/c22_extraction_contrex.pdf" 
+                 alt="Extreme Image" 
+                 class="extreme-image" 
+                 style="max-width: 100%; height: auto;">
+          </div>
+        <!--/ Extracting. -->
+
+        <!-- Obtaining. -->
+        <h3 class="title is-4">Obtaining Contrastive Extremes</h3>
+        <div class="content has-text-justified">
+          <p>
+            We obtain two extreme points as overarching representations for positive and negative classes to enhance the contrastive power, 
+            effectively drawing positive data points closer to the positive extreme and negative data points closer to the negative extreme.
+            Positive and negative extremes EP and EN are selected as multi-catch22 vectors that yield the complete linkage, representing the data points that yield the greatest distance between clusters.
+          </p>
+        </div>
+        <div class="content has-text-centered">
+            <img src="./static/images/Extreme_point_extraction_contrex.pdf" 
+                 alt="Extreme Image" 
+                 class="extreme-image" 
+                 style="max-width: 100%; height: auto;">
+          </div>
+        <!--/ Obtaining. -->
+
+        <!-- Framework Section -->
+          <h3 class="title is-4">Framework</h3>
+          <div class="content has-text-justified">
+            <p>
+              CONTREX is composed of a sequence representation embedding module to derive fixed-dimensional embeddings from MVTS data points, 
+              and a downstream classifier that utilizes the representation embeddings for binary prediction. 
+              Our contrastive reconstruction loss function guides the training of our sequence representation embedding module such that it will learn similar representations to the extremes in a supervised setting.
+            </p>
+          </div>
+          <div class="content has-text-centered">
+            <img src="./static/images/framework_v9.pdf" 
+                 alt="Framework Image" 
+                 class="framework-image" 
+                 style="max-width: 100%; height: auto;">
+          </div>
+          <!--/ Framework Section -->
+
+      </div>
+    </div>
+    <!--/ Methodology. -->
+
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Results Section -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        
+        <div class="content has-text-justified">
+          <p>
+            t-SNE visualization of extracted embeddings suggests that our contrastive learning model effectively separates P and N classes.  
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/tsne2plot.pdf" 
+               alt="Results Graph" 
+               class="results-image" 
+               style="max-width: 100%; height: auto;">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            The results demonstrate the effectiveness of the proposed framework in predicting solar flares.  
+            We compare performance of CONTREX against following baselines from current solar flare research: Vector MVTS (VMVTS), 
+            Vector of last timestamp (LTV), Long-short term memory (LSTM), Random convolutional kernel transform (ROCKET).
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/performance_comparison_enhanced2.pdf" 
+               alt="Results Graph" 
+               class="results-image" 
+               style="max-width: 100%; height: auto;">
+        </div>
+      </div>
+    </div>
+    <!--/ Results Section -->
+
+  </div>
+</section>
+
+
+
+
+  
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{vural2024contrastive,
+  title={Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data},
+  author={Vural, Onur and Hamdi, Shah Muhammad and Boubrahimi, Soukaina Filali},
+  journal={arXiv preprint arXiv:2410.00312},
+  year={2024}
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            In this page, the following <a
+              href="https://github.com/nerfies/nerfies.github.io">template</a> was used.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
