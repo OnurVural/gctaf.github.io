@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data.">
-  <meta name="keywords" content="time series representation learning, contrastive representation learning, multivariate time series analysis, solar flare prediction, deep learning">
+        content="Global Cross-Time Attention Fusion for Enhanced Solar Flare Prediction from Multivariate Time Series.">
+  <meta name="keywords" content="time series contrastive learning, multivariate time series classification, representation learning, time series analysis, solar flare prediction, deep learning">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data</title>
+  <title>Global Cross-Time Attention Fusion for Enhanced Solar Flare Prediction from Multivariate Time Series</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -48,7 +48,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data</h1>
+          <h1 class="title is-1 publication-title">Global Cross-Time Attention Fusion for Enhanced Solar Flare Prediction from Multivariate Time Series</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block"><a href="https://onurvural.github.io">Onur Vural</a>,</span>
             <span class="author-block">Shah Muhammad Hamdi,</span>
@@ -63,7 +63,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2410.00312"
+                <a href="https://arxiv.org/pdf/2511.12955"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -72,7 +72,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2410.00312"
+                <a href="https://arxiv.org/abs/2511.12955"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -82,13 +82,23 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/OnurVural/contrex"
+                <a href="https://github.com/OnurVural/gctaf"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
                   </span>
                   <span>Code</span>
                   </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
               </span>
             </div>
 
@@ -107,20 +117,10 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Major solar flares are abrupt surges in the Sun's magnetic flux, presenting significant risks to technological infrastructure. 
-            In view of this, effectively predicting major flares from solar active region magnetic field data through machine learning methods becomes highly important in space weather research. 
-            Magnetic field data can be represented in multivariate time series modality where the data displays an extreme class imbalance due to the rarity of major flare events. 
-            In time series classification-based flare prediction, the use of contrastive representation learning methods has been relatively limited. 
+           Multivariate time series classification is increasingly investigated in space weather research as a means to predict intense solar flare events, which can cause widespread disruptions across modern technological systems. Magnetic field measurements of solar active regions are converted into structured multivariate time series, enabling predictive modeling across segmented observation windows. However, the inherently imbalanced nature of solar flare occurrences, where intense flares are rare compared to minor flare events, presents a significant barrier to effective learning.
           </p>
           <p>
-            In this paper, we introduce CONTREX, a novel contrastive representation learning approach for multivariate time series data, 
-            addressing challenges of temporal dependencies and extreme class imbalance. 
-            Our method involves extracting dynamic features from the multivariate time series instances, 
-            deriving two extremes from positive and negative class feature vectors that provide maximum separation capability, 
-            and training a sequence representation embedding module with the original multivariate time series data guided by our novel contrastive reconstruction loss 
-            to generate embeddings aligned with the extreme points. These embeddings capture essential time series characteristics and enhance discriminative power. 
-            Our approach shows promising solar flare prediction results on the Space Weather Analytics for Solar Flares (SWAN-SF) multivariate time series benchmark dataset 
-            against baseline methods.
+            To address this challenge, we propose a novel Global Cross-Time Attention Fusion (GCTAF) architecture, a transformer-based model to enhance long-range temporal modeling. Unlike traditional self-attention mechanisms that rely solely on local interactions within time series, GCTAF injects a set of learnable cross-attentive global tokens that summarize salient temporal patterns across the entire sequence. These tokens are refined through cross-attention with the input sequence and fused back into the temporal representation, enabling the model to identify globally significant, non-contiguous time points that are critical for flare prediction. This mechanism functions as a dynamic, attention-driven temporal summarizer that augments the model’s capacity to capture discriminative flare-related dynamics. We evaluate our approach on the benchmark solar flare dataset and show that GCTAF effectively detects intense flares and improves predictive performance, demonstrating that refining transformer-based architectures presents a high-potential alternative for performing solar flare prediction tasks.
           </p>
         </div>
       </div>
@@ -130,43 +130,42 @@
 </section>
 
 
+<!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+          <iframe src="https://www.youtube.com/embed/h2YrckCUXLI?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
 <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
-    <!-- Methodology. -->
+    <!-- Method. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3">Methodology</h2>
-
-        <!-- Extracting. -->
-        <h3 class="title is-4">Extracting Dynamical Time Series Features</h3>
-        <div class="content has-text-justified">
-          <p>
-            We extract catch22 features for each univariate time series in MVTS instances to have a low dimensional summary to represent the diverse and interpretable characteristics. 
-            Accordingly, for each MVTS data instance, we extract a fixed-dimensional multi-catch22 vector of size 22N.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-            <img src="./static/images/c22_extraction_contrex.pdf" 
-                 alt="Extreme Image" 
-                 class="extreme-image" 
-                 style="max-width: 100%; height: auto;">
-          </div>
-        <!--/ Extracting. -->
+        <h2 class="title is-3">Method</h2>
 
         <!-- Obtaining. -->
         <h3 class="title is-4">Obtaining Contrastive Extremes</h3>
         <div class="content has-text-justified">
-          <p>
-            We obtain two extreme points as overarching representations for positive and negative classes to enhance the contrastive power, 
-            effectively drawing positive data points closer to the positive extreme and negative data points closer to the negative extreme.
-            Positive and negative extremes EP and EN are selected as multi-catch22 vectors that yield the complete linkage, representing the data points that yield the greatest distance between clusters.
-          </p>
+          <ul>
+            <li>Goal: to identify extreme instances to serve as distinctive representations for each class</li>
+            <li>Maximize inter-class separation</li>
+            <li>Method:  multi-catch22 vector that yields the complete linkage</li>
+          </ul>
         </div>
         <div class="content has-text-centered">
-            <img src="./static/images/Extreme_point_extraction_contrex.pdf" 
+            <img src="./static/images/Extreme_point.pdf" 
                  alt="Extreme Image" 
                  class="extreme-image" 
                  style="max-width: 100%; height: auto;">
@@ -176,23 +175,30 @@
         <!-- Framework Section -->
           <h3 class="title is-4">Framework</h3>
           <div class="content has-text-justified">
-            <p>
-              CONTREX is composed of a sequence representation embedding module to derive fixed-dimensional embeddings from MVTS data points, 
-              and a downstream classifier that utilizes the representation embeddings for binary prediction. 
-              Our contrastive reconstruction loss function guides the training of our sequence representation embedding module such that it will learn similar representations to the extremes in a supervised setting.
-            </p>
+            <ul>
+              <li>GCTAF framework comprises multiple components that combine global and local temporal information from MVTS data by leveraging transformer-based strategies.</li>
+              <li>GCTAF attends learnable global tokens to input sequences via cross-attention.</li>
+              <li>The fused representation is refined through transformer-based modules, pooled, and classified using an MLP head. </li>
+              <li>Transformer Encoder Module: core temporal modeling unit, designed to capture complex temporal dependencies and interactions among solar magnetic field parameters. By employing self-attention and non-linear transformations within a residual framework, it seeks to obtain representations emphasizing salient temporal regions while suppressing irrelevant noise, enabling effective flare prediction.</li>
+            </ul>
           </div>
           <div class="content has-text-centered">
-            <img src="./static/images/framework_v9.pdf" 
+            <img src="./static/images/GCTAF-ARCH-3.pdf" 
                  alt="Framework Image" 
                  class="framework-image" 
                  style="max-width: 100%; height: auto;">
           </div>
+          <p>
+            The GCTAF model for solar flare prediction takes input of shape [B, τ, N] and learnable global tokens [1, G, N] shared across batches. 
+            The global tokens attend to the input via cross-attention, producing [B, G, N]. 
+            The input and global tokens are concatenated to [B, τ+G, N] and processed by transformer encoder blocks. 
+            The output is split into local [B, τ, N] and global [B, G, N] tokens. 
+            Local tokens are pooled to [B, N], global tokens averaged to [B, N], then concatenated into [B, 2N] and passed through an MLP for final logits.
+          </p>
           <!--/ Framework Section -->
-
       </div>
     </div>
-    <!--/ Methodology. -->
+    <!--/ Method. -->
 
   </div>
 </section>
@@ -206,33 +212,34 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Results</h2>
-        
-        <div class="content has-text-justified">
-          <p>
-            t-SNE visualization of extracted embeddings suggests that our contrastive learning model effectively separates P and N classes.  
-          </p>
-        </div>
 
+        <!-- First Row: Single Figure with Description -->
         <div class="content has-text-centered">
-          <img src="./static/images/tsne2plot.pdf" 
+          <img src="./static/images/all_metrics_grouped_barplot.pdf" 
                alt="Results Graph" 
                class="results-image" 
                style="max-width: 100%; height: auto;">
         </div>
         <div class="content has-text-justified">
           <p>
-            The results demonstrate the effectiveness of the proposed framework in predicting solar flares.  
-            We compare performance of CONTREX against following baselines from current solar flare research: Vector MVTS (VMVTS), 
-            Vector of last timestamp (LTV), Long-short term memory (LSTM), Random convolutional kernel transform (ROCKET).
+            Bar chart showing flare prediction scores across four metrics. The results demonstrate that refining transformer-based architectures holds potential in MVTS-driven solar flare prediction tasks as GCTAF is able to produce highly competitive results against state-of-the-art approaches in the literature.
           </p>
         </div>
 
+        <!-- Second Row: Figure with Description -->
         <div class="content has-text-centered">
-          <img src="./static/images/performance_comparison_enhanced2.pdf" 
-               alt="Results Graph" 
-               class="results-image" 
+          <img src="./static/images/x9.3flare.pdf" 
+               alt="Solar Flare Graph" 
+               class="solarflare-image" 
                style="max-width: 100%; height: auto;">
         </div>
+        <div class="content has-text-justified">
+          <p>
+            Intense X9.3-class solar flare captured on September 6, 2017. Credit: NASA/SDO.
+          </p>
+        </div>
+
+  
       </div>
     </div>
     <!--/ Results Section -->
@@ -241,18 +248,15 @@
 </section>
 
 
-
-
-  
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{vural2024contrastive,
-  title={Contrastive Representation Learning for Predicting Solar Flares from Extremely Imbalanced Multivariate Time Series Data},
+    <pre><code>@article{vural2025globalcrosstimeattentionfusion,
+  title={Global Cross-Time Attention Fusion for Enhanced Solar Flare Prediction from Multivariate Time Series},
   author={Vural, Onur and Hamdi, Shah Muhammad and Boubrahimi, Soukaina Filali},
-  journal={arXiv preprint arXiv:2410.00312},
-  year={2024}
+  journal={arXiv preprint arXiv:2511.12955},
+  year={2025}
+}
 }</code></pre>
   </div>
 </section>
