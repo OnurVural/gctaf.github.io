@@ -155,23 +155,6 @@
       <div class="column is-full-width">
         <h2 class="title is-3">Method</h2>
 
-        <!-- Obtaining. -->
-        <h3 class="title is-4">Obtaining Contrastive Extremes</h3>
-        <div class="content has-text-justified">
-          <ul>
-            <li>Goal: to identify extreme instances to serve as distinctive representations for each class</li>
-            <li>Maximize inter-class separation</li>
-            <li>Method:  multi-catch22 vector that yields the complete linkage</li>
-          </ul>
-        </div>
-        <div class="content has-text-centered">
-            <img src="./static/images/Extreme_point.pdf" 
-                 alt="Extreme Image" 
-                 class="extreme-image" 
-                 style="max-width: 100%; height: auto;">
-          </div>
-        <!--/ Obtaining. -->
-
         <!-- Framework Section -->
           <h3 class="title is-4">Framework</h3>
           <div class="content has-text-justified">
@@ -196,6 +179,8 @@
             Local tokens are pooled to [B, N], global tokens averaged to [B, N], then concatenated into [B, 2N] and passed through an MLP for final logits.
           </p>
           <!--/ Framework Section -->
+
+        
       </div>
     </div>
     <!--/ Method. -->
